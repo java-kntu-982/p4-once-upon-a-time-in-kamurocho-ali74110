@@ -10,12 +10,11 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class Main extends Application {
+public class Sample extends Application {
     // this class is just a sample
     // clear the start menu and start writing your project!
     @Override
@@ -61,7 +60,7 @@ public class Main extends Application {
                 Platform.runLater(() -> progressBar.setProgress(progressBar.getProgress() + 0.1));
             }
         };
-        stage.addEventFilter(WindowEvent.WINDOW_CLOSE_REQUEST, e -> e.consume());
+//        stage.addEventFilter(WindowEvent.WINDOW_CLOSE_REQUEST, e -> e.consume());
         timer.schedule(task, 1000, 500);
         root.getChildren().addAll(circle, rectangle, progressBar);
         stage.setResizable(false);
