@@ -1,4 +1,4 @@
-package ir.ac.kntu;
+package ir.ac.kntu.model;
 
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;

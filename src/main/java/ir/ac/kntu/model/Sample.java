@@ -1,4 +1,4 @@
-package ir.ac.kntu;
+package ir.ac.kntu.model;
 
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;

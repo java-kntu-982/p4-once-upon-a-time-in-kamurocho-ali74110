@@ -8,4 +8,6 @@ open module p.once.upon.a.time.in.kamurocho {
     requires transitive javafx.web;
     requires java.logging;
     requires com.jfoenix;
+    requires checkstyle;
+
 }

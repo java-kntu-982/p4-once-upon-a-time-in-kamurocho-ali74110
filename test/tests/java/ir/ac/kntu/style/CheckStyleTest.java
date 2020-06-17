@@ -1,4 +1,4 @@
-package ir.ac.kntu.style;
+package tests.java.ir.ac.kntu.style;
 
 import com.puppycrawl.tools.checkstyle.Checker;
 import com.puppycrawl.tools.checkstyle.ConfigurationLoader;
@@ -8,10 +8,7 @@ import com.puppycrawl.tools.checkstyle.api.AuditListener;
 import com.puppycrawl.tools.checkstyle.api.AutomaticBean;
 import com.puppycrawl.tools.checkstyle.api.CheckstyleException;
 import com.puppycrawl.tools.checkstyle.api.Configuration;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.xml.sax.InputSource;
 
 import java.io.ByteArrayOutputStream;
@@ -102,7 +99,7 @@ public class CheckStyleTest {
         }
         System.out.println("Found " + errors + " check style errors.");
         System.out.println(baos.toString());
-        assertEquals(0, errors, errors + " check style errors " +
+        Assertions.assertEquals(0, errors, errors + " check style errors " +
                 "found. " + baos.toString());
         checker.destroy();
     }

@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXScrollPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="menuScene" fx:id="menuScene" maxHeight="720" maxWidth="1280" minHeight="720" minWidth="1280" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ir.ac.kntu.model.Game">
+   <GridPane prefHeight="722.0" prefWidth="1280.0">
+     <columnConstraints>
+       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+     </columnConstraints>
+     <rowConstraints>
+       <RowConstraints maxHeight="355.0000061035156" minHeight="83" prefHeight="83" vgrow="SOMETIMES" />
+       <RowConstraints maxHeight="637.7333129882812" minHeight="638.0" prefHeight="638" vgrow="SOMETIMES" />
+     </rowConstraints>
+      <children>
+      
+          <TabPane fx:id="tabPane" prefHeight="638.0" prefWidth="1292.0" tabClosingPolicy="UNAVAILABLE" GridPane.rowIndex="1">
+              <tabs>
+                  <Tab closable="false" text="Game">
+                      <content>
+                          <AnchorPane minHeight="1280.0" minWidth="620.0" mouseTransparent="true">
+                              <children>
+                                  <Text layoutX="168.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Once Upon A Time in Kamurocho" textAlignment="CENTER">
+                                      <font>
+                                          <Font name="Chiller" size="100.0" />
+                                      </font>
+                                      <fill>
+                                          <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                              <stops>
+                                                  <Stop color="RED" />
+                                                  <Stop color="#ff8400" offset="1.0" />
+                                              </stops>
+                                          </RadialGradient>
+                                      </fill>
+                                  </Text>
+                                  <Text layoutX="624.0" layoutY="410.0" strokeType="OUTSIDE" strokeWidth="0.0" text="V 1.0">
+                                      <font>
+                                          <Font size="20.0" />
+                                      </font>
+                                  </Text>
+                              </children>
+                     </AnchorPane>
+                      </content>
+                  </Tab>
+                  <Tab closable="false" text="Missions">
+                      <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                              <children>
+                                  <BorderPane layoutX="4.0" layoutY="-1.0" prefHeight="594.0" prefWidth="1267.0">
+                                      <right>
+                                          <VBox alignment="CENTER" prefHeight="594.0" prefWidth="319.0" style="-fx-border-color: black;" BorderPane.alignment="CENTER">
+                                              <children>
+                                                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                                                      <VBox.margin>
+                                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                      </VBox.margin>
+                                                      <padding>
+                                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                      </padding>
+                                          <bottom>
+                                             <Text fx:id="waves" fill="#8f8d00" strokeType="OUTSIDE" strokeWidth="0.0" text="waves" textAlignment="CENTER" wrappingWidth="100.6123046875" BorderPane.alignment="CENTER">
+                                                <BorderPane.margin>
+                                                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                </BorderPane.margin>
+                                                <font>
+                                                   <Font name="Matura MT Script Capitals" size="30.0" />
+                                                </font>
+                                             </Text>
+                                          </bottom>
+                                          <top>
+                                             <Text fx:id="enemies" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="enemies" textAlignment="CENTER" BorderPane.alignment="CENTER">
+                                                <font>
+                                                   <Font name="Times New Roman" size="35.0" />
+                                                </font>
+                                             </Text>
+                                          </top>
+                                          <center>
+                                             <Text fx:id="boss" fill="#8a3b3b" strokeType="OUTSIDE" strokeWidth="0.0" text="Boss : " textAlignment="CENTER" BorderPane.alignment="CENTER">
+                                                <font>
+                                                   <Font name="Times New Roman" size="20.0" />
+                                                </font>
+                                             </Text>
+                                          </center>
+                                                  </BorderPane>
+                                                  <BorderPane layoutX="10.0" layoutY="256.0" prefHeight="200.0" prefWidth="200.0">
+                                                      <VBox.margin>
+                                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                      </VBox.margin>
+                                                      <padding>
+                                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                      </padding>
+                                          <top>
+                                             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="HQ" BorderPane.alignment="BOTTOM_LEFT">
+                                                <font>
+                                                   <Font size="35.0" />
+                                                </font>
+                                             </Text>
+                                          </top>
+                                          <left>
+                                             <ImageView fx:id="HQ1" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                                                <BorderPane.margin>
+                                                   <Insets left="10.0" />
+                                                </BorderPane.margin>
+                                             </ImageView>
+                                          </left>
+                                          <right>
+                                             <ImageView fx:id="HQ2" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                                                <BorderPane.margin>
+                                                   <Insets right="10.0" />
+                                                </BorderPane.margin>
+                                             </ImageView>
+                                          </right>
+                                                  </BorderPane>
+                                       <GridPane prefHeight="189.0" prefWidth="318.0" style="-fx-grid-lines-visible: true;">
+                                         <columnConstraints>
+                                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="156.86669921875" minWidth="10.0" prefWidth="153.6666259765625" />
+                                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="170.7332763671875" minWidth="10.0" prefWidth="164.3333740234375" />
+                                         </columnConstraints>
+                                         <rowConstraints>
+                                           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                         </rowConstraints>
+                                          <children>
+                                             <Text fill="#00bf06" strokeType="OUTSIDE" strokeWidth="0.0" text="Win Condition" textAlignment="CENTER">
+                                                <GridPane.margin>
+                                                   <Insets left="5.0" />
+                                                </GridPane.margin>
+                                                <font>
+                                                   <Font name="Times New Roman" size="20.0" />
+                                                </font>
+                                             </Text>
+                                             <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Defeat Condition" textAlignment="CENTER" GridPane.rowIndex="1">
+                                                <font>
+                                                   <Font name="Times New Roman" size="20.0" />
+                                                </font>
+                                                <GridPane.margin>
+                                                   <Insets left="3.0" />
+                                                </GridPane.margin>
+                                             </Text>
+                                             <Text fill="#346936" strokeType="OUTSIDE" strokeWidth="0.0" text="Defeat All Enemies" textAlignment="CENTER" GridPane.columnIndex="1">
+                                                <font>
+                                                   <Font name="Times New Roman" size="15.0" />
+                                                </font>
+                                                <GridPane.margin>
+                                                   <Insets left="20.0" />
+                                                </GridPane.margin>
+                                             </Text>
+                                             <Text fill="#77352d" strokeType="OUTSIDE" strokeWidth="0.0" text="All Equipment/Units lost" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                <font>
+                                                   <Font name="Times New Roman" size="15.0" />
+                                                </font>
+                                                <GridPane.margin>
+                                                   <Insets left="5.0" />
+                                                </GridPane.margin>
+                                             </Text>
+                                          </children>
+                                       </GridPane>
+                                              </children>
+                                 </VBox>
+                                      </right>
+                                      <center>
+                                          <VBox alignment="CENTER" prefHeight="400.0" prefWidth="958.0" BorderPane.alignment="CENTER">
+                                              <opaqueInsets>
+                                                  <Insets />
+                                              </opaqueInsets>
+                                              <BorderPane onMouseClicked="#showMission1" prefHeight="120.0" prefWidth="930.0" style="-fx-border-color: yellow;">
+                                                  <VBox.margin>
+                                                      <Insets bottom="45.0" left="5.0" right="5.0" top="5.0" />
+                                                  </VBox.margin>
+                                                  <padding>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                  </padding>
+                                                  <right>
+                                                      <JFXButton fx:id="mission1Select" buttonType="RAISED" onAction="#mission1Selected" onMouseClicked="#mission1Selected" prefHeight="90.0" prefWidth="150.0" text="Start" textAlignment="CENTER" BorderPane.alignment="CENTER">
+                                                          <ripplerFill>
+                                                              <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                                                  <stops>
+                                                                      <Stop color="WHITE" />
+                                                                      <Stop color="#fffb00" offset="1.0" />
+                                                                  </stops>
+                                                              </RadialGradient>
+                                                          </ripplerFill>
+                                                          <font>
+                                                              <Font name="Matura MT Script Capitals" size="25.0" />
+                                                          </font>
+                                                          <BorderPane.margin>
+                                                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                          </BorderPane.margin>
+                                                          <padding>
+                                                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                          </padding>
+                                                      </JFXButton>
+                                                  </right>
+                                                  <center>
+                                                      <Text onMouseClicked="#showMission1" strokeType="OUTSIDE" strokeWidth="0.0" text="Mission 1 " textAlignment="CENTER" wrappingWidth="328.0" BorderPane.alignment="CENTER">
+                                                          <font>
+                                                              <Font name="Matura MT Script Capitals" size="60.0" />
+                                                          </font>
+                                                          <fill>
+                                                              <LinearGradient>
+                                                                  <stops>
+                                                                      <Stop color="#444415" />
+                                                                      <Stop color="#717700" offset="1.0" />
+                                                                  </stops>
+                                                              </LinearGradient>
+                                                          </fill>
+                                                      </Text>
+                                                  </center>
+                                              </BorderPane>
+                                              <BorderPane layoutX="10.0" layoutY="256.0" onMouseClicked="#showMission2" prefHeight="120.0" prefWidth="200.0" style="-fx-border-color: orange;">
+                                                  <VBox.margin>
+                                                      <Insets bottom="45.0" left="5.0" right="5.0" top="5.0" />
+                                                  </VBox.margin>
+                                                  <padding>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                  </padding>
+                                                  <right>
+                                                      <JFXButton fx:id="mission2Select" buttonType="RAISED" onMouseClicked="#mission2Selected" prefHeight="90.0" prefWidth="150.0" text="Start" textAlignment="CENTER" BorderPane.alignment="CENTER">
+                                                          <font>
+                                                              <Font name="Matura MT Script Capitals" size="25.0" />
+                                                          </font>
+                                                          <ripplerFill>
+                                                              <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                                                  <stops>
+                                                                      <Stop color="WHITE" />
+                                                                      <Stop color="#ff9e00" offset="1.0" />
+                                                                  </stops>
+                                                              </RadialGradient>
+                                                          </ripplerFill>
+                                                          <BorderPane.margin>
+                                                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                          </BorderPane.margin>
+                                                          <padding>
+                                                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                          </padding>
+                                                      </JFXButton>
+                                                  </right>
+                                                  <center>
+                                                      <Text onMouseClicked="#showMission2" strokeType="OUTSIDE" strokeWidth="0.0" text="Mission 2 " textAlignment="CENTER" wrappingWidth="315.20001220703125" BorderPane.alignment="CENTER">
+                                                          <font>
+                                                              <Font name="Matura MT Script Capitals" size="60.0" />
+                                                          </font>
+                                                          <fill>
+                                                              <LinearGradient>
+                                                                  <stops>
+                                                                      <Stop color="#444415" />
+                                                                      <Stop color="#c56f00" offset="1.0" />
+                                                                  </stops>
+                                                              </LinearGradient>
+                                                          </fill>
+                                                      </Text>
+                                                  </center>
+                                              </BorderPane>
+                                              <BorderPane layoutX="10.0" layoutY="356.0" onMouseClicked="#showMission3" prefHeight="120.0" prefWidth="200.0" style="-fx-border-color: red;">
+                                                  <VBox.margin>
+                                                      <Insets bottom="65.0" right="5.0" top="5.0" />
+                                                  </VBox.margin>
+                                                  <padding>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                  </padding>
+                                                  <right>
+                                                      <JFXButton fx:id="mission3Select" buttonType="RAISED" onMouseClicked="#mission3Selected" prefHeight="90.0" prefWidth="150.0" text="Start" textAlignment="CENTER" BorderPane.alignment="CENTER">
+                                                          <BorderPane.margin>
+                                                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                          </BorderPane.margin>
+                                                          <padding>
+                                                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                          </padding>
+                                                          <ripplerFill>
+                                                              <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                                                  <stops>
+                                                                      <Stop color="RED" />
+                                                                      <Stop color="WHITE" offset="1.0" />
+                                                                  </stops>
+                                                              </RadialGradient>
+                                                          </ripplerFill>
+                                                          <font>
+                                                              <Font name="Matura MT Script Capitals" size="25.0" />
+                                                          </font>
+                                                      </JFXButton>
+                                                  </right>
+                                                  <center>
+                                                      <Text onMouseClicked="#showMission3" strokeType="OUTSIDE" strokeWidth="0.0" text="Mission 3" textAlignment="CENTER" wrappingWidth="300" BorderPane.alignment="CENTER">
+                                                          <font>
+                                                              <Font name="Matura MT Script Capitals" size="60.0" />
+                                                          </font>
+                                                          <fill>
+                                                              <LinearGradient>
+                                                                  <stops>
+                                                                      <Stop color="#444415" />
+                                                                      <Stop color="#970101" offset="1.0" />
+                                                                  </stops>
+                                                              </LinearGradient>
+                                                          </fill>
+                                                      </Text>
+                                                  </center>
+                                              </BorderPane>
+                                          </VBox>
+                                      </center>
+                                  </BorderPane>
+                              </children>
+                     </AnchorPane>
+                      </content>
+                  </Tab>
+                  <Tab closable="false" text="Organization">
+                      <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                              <children>
+                                  <GridPane AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                                      <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                      <children>
+                                          <FlowPane prefHeight="200.0" prefWidth="200.0" />
+                                          <FlowPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" />
+                                      </children>
+                                  </GridPane>
+                              </children>
+                     </AnchorPane>
+                      </content>
+                  </Tab>
+                  <Tab closable="false" text="Train">
+                      <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                              <children>
+                                  <JFXScrollPane layoutX="449.0" layoutY="175.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
+                              </children>
+                     </AnchorPane>
+                      </content>
+                  </Tab>
+                  <Tab closable="false" text="Fortify HQ">
+                      <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                      </content>
+                  </Tab>
+                  <Tab closable="false" text="Recruit employee">
+                      <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                      </content>
+                  </Tab>
+                  <Tab closable="false" text="Help">
+                      <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                      </content>
+                  </Tab>
+              </tabs>
+              <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
+              </padding>
+          </TabPane>
+         <HBox minHeight="80.0" minWidth="1280.0" prefHeight="80.0" prefWidth="1280.0" spacing="20.0">
+            <padding>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+            <children>
+               <ImageView fitHeight="68.0" fitWidth="74.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@Images/face.jpg" />
+                  </image>
+                  <HBox.margin>
+                     <Insets left="15.0" />
+                  </HBox.margin>
+               </ImageView>
+               <Text fx:id="name" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" textAlignment="CENTER" HBox.hgrow="SOMETIMES">
+                  <font>
+                     <Font name="Matura MT Script Capitals" size="20.0" />
+                  </font>
+                  <HBox.margin>
+                     <Insets left="30.0" top="20.0" />
+                  </HBox.margin>
+                  <fill>
+                     <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                        <stops>
+                           <Stop color="RED" />
+                           <Stop color="#ff9191" offset="1.0" />
+                        </stops>
+                     </RadialGradient>
+                  </fill>
+               </Text>
+               <Text fx:id="cash" fill="#159f00" strokeType="OUTSIDE" strokeWidth="0.0" text="Cash :">
+                  <HBox.margin>
+                     <Insets left="30.0" top="20.0" />
+                  </HBox.margin>
+                  <font>
+                     <Font name="Matura MT Script Capitals" size="20.0" />
+                  </font>
+               </Text>
+            </children>
+         </HBox>
+      </children>
+   </GridPane>
+</AnchorPane>
