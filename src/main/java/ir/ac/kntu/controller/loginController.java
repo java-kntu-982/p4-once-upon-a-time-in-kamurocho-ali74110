@@ -1,20 +1,14 @@
 package ir.ac.kntu.controller;
 
-import com.jfoenix.controls.JFXAlert;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
-import ir.ac.kntu.model.Game;
-import ir.ac.kntu.model.Player;
-import ir.ac.kntu.view.Main;
+import ir.ac.kntu.model.game.Game;
+import ir.ac.kntu.model.game.Player;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Screen;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 

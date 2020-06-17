@@ -1,8 +1,6 @@
 package ir.ac.kntu.model;
 
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.Rectangle;
+import ir.ac.kntu.model.soldiers.Soldier;
 
 import java.util.ArrayList;
 import java.util.List;

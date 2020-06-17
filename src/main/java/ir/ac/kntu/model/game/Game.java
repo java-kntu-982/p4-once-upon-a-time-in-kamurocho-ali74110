@@ -1,19 +1,12 @@
-package ir.ac.kntu.model;
+package ir.ac.kntu.model.game;
 
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
+import ir.ac.kntu.model.soldiers.Soldier;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.text.Text;
-import javafx.stage.Screen;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class Game {
@@ -28,9 +21,8 @@ public class Game {
     private List<Soldier> myLockedSoldiers = new ArrayList<>();
     private HQ container = HQ.createHQ1() , van = HQ.createHQ2(), truck = HQ.createHQ3() ;
 
-    
-    public static void startGame(Scene currentScene, Player player) throws IOException {
 
+    public static void startGame(Scene currentScene, Player player) throws IOException {
 
     }
 

@@ -1,4 +1,4 @@
-package ir.ac.kntu.model;
+package ir.ac.kntu.model.soldiers;
 
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;

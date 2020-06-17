@@ -1,4 +1,4 @@
-package ir.ac.kntu.model;
+package ir.ac.kntu.model.game;
 
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
