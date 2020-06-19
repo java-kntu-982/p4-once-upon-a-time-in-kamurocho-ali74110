@@ -1,11 +1,12 @@
 package ir.ac.kntu.model.game;
 
+import ir.ac.kntu.model.Coordinate;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
-public class HQ {
+public class HQ extends Coordinate {
     private String name;
     private int health;
     private Shape HQShape;

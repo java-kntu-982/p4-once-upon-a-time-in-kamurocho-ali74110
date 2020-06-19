@@ -1,9 +1,11 @@
 package ir.ac.kntu.model.game;
 
+import ir.ac.kntu.model.soldiers.KamurochoSoldier;
 import ir.ac.kntu.model.soldiers.Soldier;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -11,25 +13,21 @@ import java.util.List;
 
 public class Game {
 
+    public BorderPane missionsBorderPane;
+
 //    public mission
     public Player player = new Player() ;
-    public Mission mission1 = new Mission(1);
-    public Mission mission2 = new Mission(2);
-    public Mission mission3 = new Mission(3);
-    private Mission selectedMission;
-    private List<Soldier> mySoldiers = new ArrayList<>();
-    private List<Soldier> myLockedSoldiers = new ArrayList<>();
-    private HQ container = HQ.createHQ1() , van = HQ.createHQ2(), truck = HQ.createHQ3() ;
-
+    public Mission mission1 = new Mission(1,6);
+    public Mission mission2 = new Mission(2,7);
+    public Mission mission3 = new Mission(3,8);
+    private List<KamurochoSoldier> mySoldiers = new ArrayList<>();
+    private List<KamurochoSoldier> myLockedSoldiers = new ArrayList<>();
 
     public static void startGame(Scene currentScene, Player player) throws IOException {
 
     }
 
 
-    public void mission1Selected(MouseEvent mouseEvent) {
-
-    }
     public void mission2Selected(MouseEvent mouseEvent) {
         if (player.getMission2Lock()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -37,7 +35,6 @@ public class Game {
             alert.setHeaderText("mission 2 is locked");
             alert.show();
         }
-        selectedMission = mission2;
     }
     public void mission3Selected(MouseEvent mouseEvent) {
         if (player.getMission3Lock()) {
@@ -46,7 +43,6 @@ public class Game {
             alert.setHeaderText("mission 3 is locked");
             alert.show();
         }
-        selectedMission = mission3;
     }
 
 //    public void showMission1(MouseEvent mouseEvent) {

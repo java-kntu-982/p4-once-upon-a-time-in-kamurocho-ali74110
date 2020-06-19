@@ -76,7 +76,7 @@
                                                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                       </padding>
                                           <bottom>
-                                             <Text fx:id="waves" fill="#8f8d00" strokeType="OUTSIDE" strokeWidth="0.0" text="waves" textAlignment="CENTER" wrappingWidth="100.6123046875" BorderPane.alignment="CENTER">
+                                             <Text fx:id="waves" fill="#a9a602" strokeType="OUTSIDE" strokeWidth="0.0" text="waves" textAlignment="CENTER" wrappingWidth="100.6123046875" BorderPane.alignment="CENTER">
                                                 <BorderPane.margin>
                                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                 </BorderPane.margin>
@@ -93,7 +93,7 @@
                                              </Text>
                                           </top>
                                           <center>
-                                             <Text fx:id="boss" fill="#8a3b3b" strokeType="OUTSIDE" strokeWidth="0.0" text="Boss : " textAlignment="CENTER" BorderPane.alignment="CENTER">
+                                             <Text fx:id="boss" fill="#746969" strokeType="OUTSIDE" strokeWidth="0.0" text="Boss : " textAlignment="CENTER" BorderPane.alignment="CENTER">
                                                 <font>
                                                    <Font name="Times New Roman" size="20.0" />
                                                 </font>
@@ -215,10 +215,11 @@
                                                               <Font name="Matura MT Script Capitals" size="60.0" />
                                                           </font>
                                                           <fill>
-                                                              <LinearGradient>
+                                                              <LinearGradient endX="1.0" endY="1.0">
                                                                   <stops>
                                                                       <Stop color="#444415" />
-                                                                      <Stop color="#717700" offset="1.0" />
+                                                                      <Stop color="#717700" offset="0.9961832061068702" />
+                                                      <Stop color="#717700" offset="1.0" />
                                                                   </stops>
                                                               </LinearGradient>
                                                           </fill>

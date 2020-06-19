@@ -9,15 +9,20 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Tab;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 
+import java.awt.event.MouseEvent;
+
 public abstract class GraphicBuilder {
+//    static VBox missionsDetails;
+//    static VBox mission1Details;
+//    static VBox mission2Details;
+//    static VBox mission3Details;
+//    static BorderPane missionsBorderPane;
     public static Text creatYourNameText(){
         Text text = new Text("Enter your name:");
         text.setTextAlignment(TextAlignment.CENTER);
@@ -96,45 +101,75 @@ public abstract class GraphicBuilder {
         Tab tab = new Tab("Missions");
         tab.setClosable(false);
         AnchorPane missions = new AnchorPane();
+        tab.setContent(missions);
         missions.setPrefSize(1275,595);
 
         BorderPane missionsBorderPane = new BorderPane();
         missionsBorderPane.setPrefSize(1275,595);
+        missionsBorderPane.setPadding(new Insets(10));
+
+        HBox mission1 = createMissionHBox(1,"717700",game);
+        HBox mission2 = createMissionHBox(2,"c56f00",game);
+        HBox mission3 = createMissionHBox(3,"970101",game);
 
         VBox missionsView = new VBox();
-        BorderPane mission1 = new BorderPane();
-        mission1.setPrefSize(930,120);
-        mission1.setPadding(new Insets(5));
-        Button startMission1 = new Button();
-        startMission1.setAlignment(Pos.CENTER_RIGHT);
-        startMission1.setText("Start");
-        startMission1.setPrefSize(150,90);
-//        game.mission1.wavesNumText;
+        missionsView.getChildren().addAll(mission1,mission2,mission3);
 
 
-        BorderPane mission2 = new BorderPane();
-        mission2.setPrefSize(930,120);
-        mission2.setPadding(new Insets(5));
-        Button startMission2 = new Button();
-        startMission2.setAlignment(Pos.CENTER_RIGHT);
-        startMission2.setText("Start");
-        startMission2.setPrefSize(150,90);
+        VBox mission1Details;
 
-        BorderPane mission3 = new BorderPane();
-        mission3.setPrefSize(930,120);
-        mission3.setPadding(new Insets(5));
-        Button startMission3 = new Button();
-        startMission3.setAlignment(Pos.CENTER_RIGHT);
-        startMission3.setText("Start");
-        startMission3.setFont(Font.font("Matura MT Script Capitals",25));
-        startMission3.setPrefSize(150,90);
+        game.mission1.information = createMission1Details(180,"Boss lvl.1","6","7","8");
+        game.mission2.information = createMission1Details(280,"Boss lvl.2","7","8","9");
+        game.mission3.information = createMission1Details(400,"2xBoss lvl.1\n2xBoss lvl.2","8","8","9");
+        game.mission1.missionView = mission1;
+        game.mission2.missionView = mission2;
+        game.mission3.missionView = mission3;
+        game.missionsBorderPane = missionsBorderPane;
+
+        missionsBorderPane.setCenter(missionsView);
 
 
-        VBox missionsDetails = new VBox();
-
-
+        missions.getChildren().add(missionsBorderPane);
         return tab;
     }
+
+    private static VBox createMission1Details(int enemiesNum , String bossName , String wavesNum,String hq1,String hq2) {
+        VBox vBox = new VBox();
+
+        BorderPane borderPane = new BorderPane();
+        Text enemies = new Text(enemiesNum + " enemies");
+        enemies.setFont(Font.font("Times New Roman",35));
+        enemies.setFill(Color.RED);
+        Text boss = new Text(bossName);
+        boss.setFont(Font.font("Times New Roman",20));
+        boss.setFill(Color.BLACK);
+        Text waves = new Text("in "+wavesNum+" Waves");
+        waves.setFont(Font.font("Matura MT Script Capitals",30));
+        waves.setFill(Color.valueOf("a9a602"));
+        borderPane.setPadding(new Insets(5));
+        borderPane.setPrefSize(300,200);
+
+
+        BorderPane borderPane1 = new BorderPane();
+        Text HQ = new Text("HQ:");
+        ImageView HQ1 = new ImageView(new Image("/Images/Shot000"+hq1+".png"));
+        ImageView HQ2 = new ImageView(new Image("/Images/Shot000"+hq2+".png"));
+        borderPane1.setPadding(new Insets(5));
+        borderPane1.setPrefSize(300,200);
+
+        GridPane gridPane = new GridPane();
+        Text winCond = new Text("Win Condition");
+        Text defeatCon = new Text("Defeat Condition");
+        Text winCondExp = new Text("Defeat All Enemies");
+        Text defeatConExp = new Text("All Equipment/Units lost");
+        gridPane.setPadding(new Insets(5));
+        gridPane.setPrefSize(300,200);
+
+        vBox.getChildren().addAll(borderPane,borderPane1,gridPane);
+        return vBox;
+    }
+
+
     public static Tab buildOrganizationTab(){
         Tab tab = new Tab("Organization");
         tab.setClosable(false);
@@ -164,5 +199,29 @@ public abstract class GraphicBuilder {
         tab.setClosable(false);
 
         return tab;
+    }
+    public static HBox createMissionHBox(int missionNum , String colour , Game game){
+        HBox mission = new HBox();
+        mission.setPrefSize(930,120);
+        mission.setPadding(new Insets(20));
+        mission.setSpacing(50);
+        Button startMission = new Button();
+        startMission.setAlignment(Pos.CENTER);
+        startMission.setText("Start");
+        startMission.setPrefSize(150,90);
+        startMission.setTextAlignment(TextAlignment.CENTER);
+        Text missionText = new Text("Mission "+missionNum);
+        missionText.setFont(Font.font("Matura MT Script Capitals",60));
+        missionText.setWrappingWidth(330);
+        missionText.setFill(Color.valueOf(colour));
+        mission.getChildren().addAll(missionText,startMission);
+        if (missionNum==1){
+            game.mission1.startButton = startMission;
+        }else if (missionNum==2){
+            game.mission2.startButton = startMission;
+        }else if (missionNum==3){
+            game.mission3.startButton = startMission;
+        }
+        return mission;
     }
 }

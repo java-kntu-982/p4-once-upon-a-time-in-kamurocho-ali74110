@@ -29,12 +29,24 @@ public class Play extends Application {
         tuneStage(stage);
         Scene scene = new Scene(root);
         stage.setScene(scene);
+        stage.show();
 
         startLoginPage(root,root2,stage);
 
-        startMenuPage(root2);
-        stage.show();
-    }
+        new Thread(()->{
+            startMenuPage(root2);
+            game.mission1.missionView.setOnMouseClicked(e->{
+                game.missionsBorderPane.setRight(game.mission1.information);
+            });
+            game.mission2.missionView.setOnMouseClicked(e->{
+                game.missionsBorderPane.setRight(game.mission2.information);
+            });
+            game.mission3.missionView.setOnMouseClicked(e->{
+                game.missionsBorderPane.setRight(game.mission3.information);
+            });
+        }).start();
+
+}
 
     public void tuneStage(Stage stage){
         stage.setResizable(false);

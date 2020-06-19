@@ -1,10 +1,16 @@
 package ir.ac.kntu.model.soldiers;
 
+import ir.ac.kntu.model.Coordinate;
+import ir.ac.kntu.model.Movable;
+import ir.ac.kntu.model.Warrior;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
-public class Soldier {
+public class Soldier implements Movable {
+    private Coordinate currentCoordinate;
+    private Coordinate toGoCoordinate;
+    private int speed;
     private String name;
     private int health;
     private int attack;
@@ -94,7 +100,32 @@ public class Soldier {
         this.healthRec = healthRec;
     }
 
-    public void setSoldierShape(Circle soldierShape) {
-        this.soldierShape = soldierShape;
+    public void setSoldierShape(Circle soldierShape) { this.soldierShape = soldierShape; }
+
+    public void setName(String name) { this.name = name; }
+
+    public Coordinate getCurrentCoordinate() {
+        return currentCoordinate;
     }
+
+    public void setCurrentCoordinate(Coordinate currentCoordinate) {
+        this.currentCoordinate = currentCoordinate;
+    }
+
+    public Coordinate getToGoCoordinate() {
+        return toGoCoordinate;
+    }
+
+    public void setToGoCoordinate(Coordinate toGoCoordinate) {
+        this.toGoCoordinate = toGoCoordinate;
+    }
+
+    @Override
+    public void move() {
+        double xMovement = (this.toGoCoordinate.x-this.currentCoordinate.x)/this.currentCoordinate.distance(this.toGoCoordinate);
+        double yMovement = (this.toGoCoordinate.y-this.currentCoordinate.y)/this.currentCoordinate.distance(this.toGoCoordinate);
+        this.currentCoordinate.x += xMovement;
+        this.currentCoordinate.y += yMovement;
+    }
+
 }

@@ -6,16 +6,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Wave {
-    private List<Soldier> enemySoldiers = new ArrayList<>();
+    private List<Enemy> enemySoldiers = new ArrayList<>();
     private Soldier boss;
     private int waveNum;
 
     public Wave(int mission , int wave ){
         waveNum = wave ;
+        for (int i=0 ;i<5;i++){
+            enemySoldiers.add(new GrayEnemy());
+        }
         if (mission==1){
-            for (int i=0 ;i<5;i++){
-                enemySoldiers.add(new GrayEnemy());
-            }
             switch (wave){
                 case 1 : createRedEnemies(5);
                 case 2 : createRedEnemies(15);
@@ -24,10 +24,8 @@ public class Wave {
                 case 5 : createRedEnemies(35);
                 case 6 : createRedEnemies(45);
             }
+            enemySoldiers.add(new BossEnemy(1));
         }else if (mission==2){
-            for (int i=0 ;i<5;i++){
-                enemySoldiers.add(new GrayEnemy());
-            }
             for (int i=0 ;i<5;i++){
                 enemySoldiers.add(new YellowEnemy());
             }
@@ -39,8 +37,9 @@ public class Wave {
                 case 6 : createRedEnemies(50);
                 case 7 : createRedEnemies(60);
             }
+            enemySoldiers.add(new BossEnemy(2));
         }else if (mission==3){
-            for (int i=0 ;i<10;i++){
+            for (int i=0 ;i<5;i++){
                 enemySoldiers.add(new GrayEnemy());
             }
             for (int i=0 ;i<5;i++){
@@ -60,6 +59,10 @@ public class Wave {
                 case 8 : createRedEnemies(60);
             }
         }
+        enemySoldiers.add(new BossEnemy(1));
+        enemySoldiers.add(new BossEnemy(1));
+        enemySoldiers.add(new BossEnemy(2));
+        enemySoldiers.add(new BossEnemy(2));
     }
     public void createRedEnemies(int num){
         for (int i=0 ;i<num;i++){
