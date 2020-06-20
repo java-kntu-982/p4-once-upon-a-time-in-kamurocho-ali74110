@@ -27,7 +27,7 @@ public class Enemy extends Soldier implements Warrior {
         for (KamurochoSoldier soldier : allKamurochoSoldiers){
             if (soldier.getCurrentCoordinate().isInRatio(this.getVisionRatio(),this.getCurrentCoordinate())){
                 inRatioKamurochoSoldiers.add(soldier);
-            }else {
+            } else {
                 inRatioKamurochoSoldiers.remove(soldier);
             }
         }

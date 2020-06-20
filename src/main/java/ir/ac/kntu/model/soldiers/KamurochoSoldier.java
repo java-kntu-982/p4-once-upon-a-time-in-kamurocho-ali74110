@@ -30,4 +30,5 @@ public class KamurochoSoldier extends Soldier implements Warrior {
             }
         }
     }
+
 }
